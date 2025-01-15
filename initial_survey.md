@@ -57,36 +57,45 @@ Your answer here
 
 ### 12. Q1
 ![image](https://github.com/user-attachments/assets/c45267df-30b3-40fc-917b-e4e1b84d3497)
+
 Your answer here
 
 ### 13. Q2
 ![image](https://github.com/user-attachments/assets/f77b7aff-b28f-4b11-b705-0bb4bdfa8d20)
+
 Your answer here
 
 ### 14. Q3
 ![image](https://github.com/user-attachments/assets/6c293a68-e7cf-4879-b16d-d6a41441d0c0)
+
 Your answer here
 
 ### 15. Q4a
 ![image](https://github.com/user-attachments/assets/8955cbe2-eb63-4667-951d-659199bb21cf)
+
 Your answer here
 
 ### 16. Q4b
 ![image](https://github.com/user-attachments/assets/89e6be15-e0e1-4321-a090-64076ada34cc)
+
 Your answer here
 
 ### 17. Q5
 ![image](https://github.com/user-attachments/assets/d984753e-7777-4a94-9c05-84e046b2490a)
+
 Your answer here
 
 ### 18. Q6
 ![image](https://github.com/user-attachments/assets/1ed7130f-7afc-46ef-b4fd-f42a8ea1709a)
+
 Your answer here
 
 ### 19. Q7
 ![image](https://github.com/user-attachments/assets/3ea0859d-d9ca-425a-a0ff-18f17c6f261f)
+
 Your answer here
 
 ### 20. Q8
 ![image](https://github.com/user-attachments/assets/98ca430c-1318-496b-95fc-a7bf211145d6)
+
 Your answer here
