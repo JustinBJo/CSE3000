@@ -9,6 +9,9 @@ Files included are:
 - initial_survey.md: the initial survey that tested participants' mathematics proficiency
 - final_assessment.md: the final assessment that tested participants' learning outcomes
 
+### tutorials
+This directory includes the tutorials that were created in collaboration with co-researchers. These tutorials were shared on a Notion page so they could be collaboratively edited and shared with the participants.
+
 ### analysis
 This directory includes the Python files that were used to analyze data collected through the forms listed above.
 
