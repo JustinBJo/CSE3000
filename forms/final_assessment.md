@@ -24,13 +24,13 @@ Your answer here
 ### 4. You are training a machine learning model with a dataset of 10,000 samples. If you use 80% of the data for training and 20% for testing, which of the following might happen?
 - The model may not have enough data to learn patterns properly.
 - The model may suffer from overfitting during training.
-- The test set might not fully represent the variability in the data.
+- The test set might not fully represent the variability in the data. V
 - The model’s performance on the test set might overestimate its real-world accuracy.
 - Not sure
 
 ### 5. What happens when a machine learning model overfits?
 - The model becomes more efficient in processing data.
-- The model performs well on training data but poorly on new data.
+- The model performs well on training data but poorly on new data. V
 - The model fails to learn the patterns in the training data.
 - The model performs equally well on training and test data.
 - Not sure
@@ -39,7 +39,7 @@ Your answer here
 - The test set is not representative; adjust the train-test split.
 - Underfitting; increase model complexity or use a larger test set.
 - Balanced performance; no changes are needed.
-- Overfitting; reduce model complexity or gather more training data.
+- Overfitting; reduce model complexity or gather more training data. V
 - Not sure
 
 ### 7. Why is it important to include a validation set when training a model?
@@ -51,13 +51,13 @@ Your answer here
 
 ### 8. Which of the following best describes the role of the prior probability in Bayes' Rule?
 - It measures the compatibility of evidence with a hypothesis.
-- It is the initial belief about an event before new evidence is considered.
+- It is the initial belief about an event before new evidence is considered. V
 - It is the total probability of the evidence occurring.
 - It represents the updated belief after considering new evidence.
 - Not sure
 
 ### 9. In Bayesian classification, which of the following describes a Type I error?
-- Incorrectly classifying an item as belonging to a class when it does not.
+- Incorrectly classifying an item as belonging to a class when it does not. V
 - Failing to classify an item into a class when it belongs there.
 - Miscalculating the prior probability of a class.
 - Minimizing the posterior probability of an incorrect classification.
@@ -72,7 +72,7 @@ Your answer here
 > What is the Bayes error rate for this spam filter?
 
 - 5%
-- 10%
+- 10% V
 - 15%
 - 20%
 - Not sure
@@ -86,7 +86,7 @@ Your answer here
 > If an applicant passes the test, what is the probability that they are actually qualified?
 
 - 56%
-- 64%
+- 64% V
 - 72%
 - 82%
 - Not sure
@@ -102,11 +102,11 @@ Your answer here
 > Given this information, how should the system classify an item if the system detects it as defective?
 
 - Defective
-- Not Defective
+- Not Defective V
 - Not sure
 
 ### 13. What is not a disadvantage of using an Artificial Neural Network?
-- ANNs are not good at finding complex patterns in datasets.
+- ANNs are not good at finding complex patterns in datasets. V
 - It is difficult to figure out what made the model give a certain output.
 - The training of ANNs generally requires large amounts of data.
 - ANNs need a lot of computing power for training the model.
@@ -117,14 +117,14 @@ Your answer here
 > What can we say about the learning rate η?
 
 - The update of the weights are only dependent on whether the prediction is correct or wrong, not by how far is from the real expected output.
-- The learning rate needs to be positive.
+- The learning rate needs to be positive. V
 - If the model predictions are 100% correct, the weights can still change.
 - Not sure
 
 ### 15. Given a perceptron with weight vector [3,-1,1], bias -2, and activation function f(x) = -1 if x < 0, f(x) = 1 if x >= 0. What would the perceptron output with input vector [-1,-2,3]?
 - -1
 - 0
-- 1
+- 1 V
 - 2
 - Not sure
 
@@ -136,7 +136,7 @@ Your answer here
 
 ### 17. Assume we have a Multi-Layer Perceptron with 3 input nodes, two hidden layers of 4 nodes (h1 & h2), and an output layer of 2 nodes (out). What are the sizes of the weight matrices that can store this model?
 - w_h1 = 3x1, w_h2 = 4x1, w_out = 2x1
-- w_h1 = 3x4, w_h2 = 4x4, w_out = 4x2
+- w_h1 = 3x4, w_h2 = 4x4, w_out = 4x2 V
 - w_h1 = 4x1, w_h2 = 4x1, w_out = 2x1
 - w_h1 = 3x2, w_h2 = 4x2, w_out = 4x2
 - Not sure
