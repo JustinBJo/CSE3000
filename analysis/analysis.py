@@ -2,12 +2,16 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from scipy.stats import mode, ttest_ind, pearsonr, kruskal, mannwhitneyu
+from scipy.stats import mode, pearsonr, kruskal, mannwhitneyu
 from data import id_data, cs_data, id_qualitative, cs_qualitative
 
 # Convert data to DataFrames
 id_df = pd.DataFrame(id_data)
 cs_df = pd.DataFrame(cs_data)
+
+# Sort initial scores
+id_df = id_df.sort_values("initial_scores").reset_index(drop=True)
+cs_df = cs_df.sort_values("initial_scores").reset_index(drop=True)
 
 # Combine ID and CS students into one DataFrame for general analysis
 all_students_df = pd.concat([id_df, cs_df], ignore_index=True)
@@ -30,30 +34,42 @@ for group, df in [("ID Students", id_df), ("CS Students", cs_df)]:
         print(f"  {col.capitalize()}: Mean={stats['mean']:.2f}, Median={stats['median']:.2f}, Mode={stats['mode']}, Std={stats['std']:.2f}")
 
 # ---------------------- Sub-question 1: Comparison of Initial Math Scores ----------------------
-# # T-test for comparing initial math scores
-# t_stat, p_value = ttest_ind(id_df["initial_scores"], cs_df["initial_scores"])
-# print("\nSub-question 1: Initial Math Scores Comparison")
-# print(f"T-statistic: {t_stat:.2f}, P-value: {p_value:.4f}")
-
-# # Boxplot for math scores
-# plt.figure(figsize=(10, 6))
-# data = [id_df["initial_scores"], cs_df["initial_scores"]]
-# plt.boxplot(data, labels=["ID Students", "CS Students"], patch_artist=True)
-# plt.title("Boxplot: Prior Math Knowledge Scores")
-# plt.ylabel("Weighted Scores (%)")
-# plt.show()
-
-# Perform Mann-Whitney U test (alternative to T-test for non-normal distributions)
+# Mann-Whitney U test
 stat, p_value = mannwhitneyu(id_df["initial_scores"], cs_df["initial_scores"])
 print("\nSub-question 1: Initial Math Scores Comparison (Mann-Whitney U Test)")
 print(f"U-statistic: {stat:.2f}, P-value: {p_value:.4f}")
 
-# Boxplot for math scores
+# Scatterplot of maths scores
+plt.figure(figsize=(12, 8))
+# Subplot 1: Scatterplot for ID Students
+plt.subplot(1, 2, 1)
+plt.scatter(range(len(id_df["initial_scores"])), id_df["initial_scores"], color='blue', label='ID Students')
+plt.title("Initial Math Test Scores - ID Students")
+plt.xlabel("Participant Index")
+plt.ylabel("Initial Math Score (%)")
+plt.ylim(0, 100)
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend()
+# Subplot 2: Scatterplot for CS Students
+plt.subplot(1, 2, 2)
+plt.scatter(range(len(cs_df["initial_scores"])), cs_df["initial_scores"], color='orange', label='CS Students')
+plt.title("Initial Math Test Scores - CS Students")
+plt.xlabel("Participant Index")
+plt.ylabel("Initial Math Score (%)")
+plt.ylim(0, 100)
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+# Boxplot for maths scores
 plt.figure(figsize=(10, 6))
 data = [id_df["initial_scores"], cs_df["initial_scores"]]
-plt.boxplot(data, labels=["ID Students", "CS Students"], patch_artist=True)
+boxplot = plt.boxplot(data, labels=["ID Students", "CS Students"], patch_artist=True)
 plt.title("Boxplot: Prior Math Knowledge Scores")
 plt.ylabel("Weighted Scores (%)")
+for patch in boxplot['boxes']:
+    patch.set_facecolor('floralwhite')
 plt.show()
 
 id_maths_background = len(id_qualitative["maths_background"])
@@ -74,7 +90,7 @@ print(f"  - ML Pipelines: r = {corr_ml_pipeline:.2f}, p = {pval_ml_pipeline:.4f}
 print(f"  - Bayes Rule: r = {corr_bayes_rule:.2f}, p = {pval_bayes_rule:.4f}")
 print(f"  - Perceptrons: r = {corr_perceptrons:.2f}, p = {pval_perceptrons:.4f}")
 
-# Visualization: Scatter plots for correlation
+# Scatterplots for correlation
 fig, axes = plt.subplots(1, 3, figsize=(18, 6))
 topics = ["ml_pipelines", "bayes_rule", "perceptrons"]
 titles = ["ML Pipelines", "Bayes Rule", "Perceptrons"]
@@ -108,7 +124,7 @@ for topic in ["ml_pipelines", "bayes_rule", "perceptrons"]:
     h_stat, p_val = kruskal(id_scores, cs_scores)
     print(f"Topic: {topic.capitalize()} - H-statistic = {h_stat:.2f}, P-value = {p_val:.4f}")
 
-# Visualization: Bar plot for faculty performance
+# Bar chart for faculty performance
 plt.figure(figsize=(10, 6))
 sns.barplot(data=all_topics, x="topic", y="score", hue="faculty", ci="sd", palette="muted")
 plt.title("Performance Across ML Topics by Faculty")
